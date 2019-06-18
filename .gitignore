@@ -1,3 +1,5 @@
 node_modules
 release-builds
 *.swp
+src/css
+yarn-error.log
