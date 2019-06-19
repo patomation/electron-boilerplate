@@ -3,3 +3,4 @@ release-builds
 *.swp
 src/css
 yarn-error.log
+dist

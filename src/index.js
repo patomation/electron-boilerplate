@@ -1,5 +1,7 @@
 'use strict';
-const dropZone = require('modules/dropZone.js');
+import styles from './sass/main.scss';
+
+// const dropZone = require('modules/dropZone.js');
 
 const entry = () => {
 
@@ -7,6 +9,6 @@ const entry = () => {
   console.log('hello world');
 }
 
-
+entry();
 
 // export entry;
