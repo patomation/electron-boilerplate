@@ -1,4 +1,4 @@
-const events = {
+window.events = {
   events: {},
   on(eventName, eventFunction) {
     this.events[eventName] = this.events[eventName] || [];
