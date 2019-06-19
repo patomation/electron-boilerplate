@@ -1,5 +1,5 @@
 'use strict';
-import events from './globals/events.js';
+import eventsGlobal from './globals/events.js';
 import styles from './sass/main.scss';
 
 import dragDropPreventDefault from './modules/dragDropPreventDefault.js';
@@ -10,7 +10,9 @@ const entry = () => {
   dragDropPreventDefault();
   dropZone.init();
   fileList.init();
-
+  events.on('drop',(files)=>{
+    debugger;
+  })
 }
 
 
