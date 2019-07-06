@@ -38,7 +38,7 @@ module.exports = {
           },
         ],
       },
-      { test: /\.(woff|wof7887f2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
+      { test: /\.(woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
     ]
   },
   plugins: [htmlPlugin]
