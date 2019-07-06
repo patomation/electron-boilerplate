@@ -33,7 +33,8 @@
         ]
       },
       "electronPackagerConfig": {
-        "packageManager": "yarn"
+        "packageManager": "yarn",
+        "icon": "app/src/icons/icon"
       },
       "electronWinstallerConfig": {
         "name": "electron_boilerplate2"
