@@ -1,47 +1,83 @@
 {
-  "name": "electron-boilerplate",
+  "name": "electron-boilerplate2",
+  "productName": "electron-boilerplate2",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
-  "main": "./prod.main.js",
+  "description": "My Electron application description",
+  "main": "./app/electron.prod.js",
   "scripts": {
-    "start"          : "concurrently -k -n \"WEBPACK,ELECTRON\" -c \"blue,magenta\" \"yarn webpack-start\" \"yarn electron-start\"",
-    "electron-start" : "wait-on http://localhost:8080 && electron ./dev.main.js",
-    "webpack-start"  : "webpack-dev-server --mode development --hot",
-    "webpack-build"  : "webpack --mode production",
-    "package-win"    : "electron-packager . electron-boilerplate-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName='Electron Boilerplate'",
-    "package-linux"  : "electron-packager . electron-boilerplate-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds",
-    "package-mac"    : "electron-packager . electron-boilerplate-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName='Electron Boilerplate'",
-    "build-win"      : "yarn webpack-build && yarn package-win",
-    "build-linux"    : "yarn webpack-build && yarn package-linux",
-    "build-mac"      : "yarn webpack-build && yarn package-mac"
+    "start": "concurrently -k -n \"WEBPACK,ELECTRON\" -c \"blue,magenta\" \"yarn webpack-start\" \"yarn electron-start\"",
+    "electron-start": "wait-on http://localhost:8080 && electron ./app/electron.dev.js",
+    "webpack-start": "webpack-dev-server --mode development --hot --livereloading",
+    "webpack-build": "webpack --mode production",
+    "package": "electron-forge package",
+    "build": "yarn webpack-build && yarn package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint src --color"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Electron",
-    "boilerplate"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "keywords": [],
+  "author": "patrick",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip"
+        ],
+        "linux": [
+          "deb",
+          "rpm"
+        ]
+      },
+      "electronPackagerConfig": {
+        "packageManager": "yarn"
+      },
+      "electronWinstallerConfig": {
+        "name": "electron_boilerplate2"
+      },
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "github_repository": {
+        "owner": "",
+        "name": ""
+      },
+      "windowsStoreConfig": {
+        "packageName": "",
+        "name": "electronboilerplate2"
+      }
+    }
+  },
+  "dependencies": {
+    "electron-compile": "^6.4.4",
+    "electron-squirrel-startup": "^1.0.0",
+    "style-loader": "^0.23.1"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "7",
-    "concurrently": "^4.1.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "concurrently": "^4.1.1",
     "css-loader": "^3.0.0",
-    "electron": "^5.0.4",
-    "electron-packager": "^13.1.1",
-    "electron-reload": "^1.4.0",
+    "electron-forge": "^5.2.4",
+    "electron-prebuilt-compile": "4.0.0",
+    "eslint": "^3",
+    "eslint-config-airbnb": "^15",
+    "eslint-plugin-import": "^2",
+    "eslint-plugin-jsx-a11y": "^5",
+    "eslint-plugin-react": "^7",
     "file-loader": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
+    "url-loader": "^2.0.1",
     "wait-on": "^3.2.0",
-    "webpack": "^4.34.0",
-    "webpack-cli": "^3.3.4",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5",
     "webpack-dev-server": "^3.7.2"
-  },
-  "dependencies": {
-    "remote": "^0.2.6"
-  },
-  "private": true
+  }
 }
