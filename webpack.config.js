@@ -1,11 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
 
-const htmlPlugin = new HtmlWebPackPlugin({
-  template: "./app/src/index.html",
-  filename: "./index.html"
-});
-
 module.exports = {
   entry: './app/src/index.js',
   output: {
@@ -41,5 +36,12 @@ module.exports = {
       { test: /\.(woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
     ]
   },
-  plugins: [htmlPlugin]
+  plugins: [
+    new HtmlWebPackPlugin({
+      hash: true,
+      title: 'Electron React Boilerplate',
+      template: "./app/src/index.html",
+      filename: "./index.html"
+    })
+  ]
 };
