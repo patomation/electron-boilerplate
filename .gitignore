@@ -5,3 +5,5 @@ src/css
 yarn-error.log
 dist
 out
+yarn.lock
+package-lock.json
