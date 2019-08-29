@@ -1,8 +1,16 @@
-'use strict'
-import './style/main.scss'
 
-const entry = () => {
+import React from "react";
+import { render } from "react-dom";
 
+import "./sass/main.scss";
+
+import App from './App.js';
+
+if (module && module.hot) {
+  module.hot.accept();
 }
 
-entry()
+render(
+  <App />,
+  document.getElementById("root")
+);
