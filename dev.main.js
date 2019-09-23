@@ -21,17 +21,10 @@ function createWindow () {
   })
 
   const indexPath = url.format({
-<<<<<<< HEAD
     protocol: 'http:',
     host: 'localhost:3000',
     pathname: 'index.html',
     slashes: true
-=======
-      protocol: 'http:',
-      host: 'localhost:3000',
-      pathname: 'index.html',
-      slashes: true
->>>>>>> REACT
   })
 
   // and load the index.html of the app.

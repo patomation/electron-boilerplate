@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react'
 
 const App = () => {
   return (
     <div className='app'>
       React App
     </div>
-  );
+  )
 }
-export default App;
+export default App

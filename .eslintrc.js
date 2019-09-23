@@ -5,7 +5,8 @@ module.exports = {
     node: true
   },
   extends: [
-    'standard'
+    'standard',
+    'plugin:react/recommended'
   ],
   settings: {
     react: {

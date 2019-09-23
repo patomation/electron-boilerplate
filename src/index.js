@@ -1,16 +1,15 @@
+import React from 'react'
+import { render } from 'react-dom'
 
-import React from "react";
-import { render } from "react-dom";
+import './sass/main.scss'
 
-import "./sass/main.scss";
-
-import App from './App.js';
+import App from './App.js'
 
 if (module && module.hot) {
-  module.hot.accept();
+  module.hot.accept()
 }
 
 render(
   <App />,
-  document.getElementById("root")
-);
+  document.getElementById('root')
+)

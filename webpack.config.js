@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin')
+const path = require('path')
 
 module.exports = {
   devServer: {
@@ -11,9 +12,9 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-react", "@babel/preset-env"]
+            presets: ['@babel/preset-react', '@babel/preset-env']
           }
         }
       },
@@ -33,12 +34,12 @@ module.exports = {
   },
   resolve: {
     alias: {
-      //Use ONE local version of react when linking to other libraries. Use this react.
+      // Use ONE local version of react when linking to other libraries. Use this react.
       react: path.resolve('./node_modules/react')
     }
   },
   node: {
-    fs: 'empty' //Alows us to use fs in webpack
+    fs: 'empty' // Alows us to use fs in webpack
   },
   plugins: [
     new HtmlWebPackPlugin({
