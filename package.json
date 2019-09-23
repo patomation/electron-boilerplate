@@ -1,20 +1,17 @@
 {
   "name": "electron-boilerplate",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A minimal Electron application",
   "main": "./prod.main.js",
   "scripts": {
-    "start": "concurrently -k -n \"WEBPACK,ELECTRON\" -c \"blue,magenta\" \"yarn webpack-start\" \"yarn electron-start\"",
-    "electron-start": "wait-on http://localhost:8080 && electron ./dev.main.js",
-    "webpack-start": "webpack-dev-server --mode development --hot",
-    "webpack-build": "webpack --mode production",
-    "package-win": "electron-packager . electron-boilerplate-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName='Electron Boilerplate'",
-    "package-linux": "electron-packager . electron-boilerplate-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds",
-    "package-mac": "electron-packager . electron-boilerplate-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName='Electron Boilerplate'",
-    "build-win": "yarn webpack-build && yarn package-win",
-    "build-linux": "yarn webpack-build && yarn package-linux",
-    "build-mac": "yarn webpack-build && yarn package-mac",
-    "lint": "./node_modules/.bin/eslint"
+    "start": "concurrently -k -n \"WEBPACK,ELECTRON\" -c \"blue,magenta\" \"yarn webpack:start\" \"yarn electron:start\"",
+    "electron:start": "wait-on http://localhost:8080 && electron ./dev.main.js",
+    "webpack:start": "webpack-dev-server --mode development --hot",
+    "webpack:build": "webpack --mode production",
+    "package:zip": "node packageApp.js --zip",
+    "package": "node packageApp.js",
+    "build": "yarn webpack:build && yarn package:zip",
+    "lint": "./node_modules/.bin/eslint ."
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -47,7 +44,8 @@
     "wait-on": "^3.2.0",
     "webpack": "^4.34.0",
     "webpack-cli": "^3.3.4",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.7.2",
+    "yargs": "^14.0.0"
   },
   "dependencies": {
     "remote": "^0.2.6"
