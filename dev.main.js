@@ -16,7 +16,8 @@ function createWindow () {
     height: 600,
     webPreferences: {
       nodeIntegration: true
-    }
+    },
+    backgroundColor: '#222427' //dark gray
   })
 
   const indexPath = url.format({
