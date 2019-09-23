@@ -1,4 +1,4 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   module: {
@@ -7,15 +7,15 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
+          loader: 'babel-loader'
         }
       },
       {
         test: /\.scss$/,
         use: [
-          "style-loader", // creates style nodes from JS strings
-          "css-loader", // translates CSS into CommonJS
-          "sass-loader" // compiles Sass to CSS, using Node Sass by default
+          'style-loader', // creates style nodes from JS strings
+          'css-loader', // translates CSS into CommonJS
+          'sass-loader' // compiles Sass to CSS, using Node Sass by default
         ]
       },
       {
@@ -23,10 +23,10 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-            options: {},
-          },
-        ],
-      },
+            options: {}
+          }
+        ]
+      }
     ]
   },
   plugins: [
@@ -37,4 +37,4 @@ module.exports = {
       filename: './index.html'
     })
   ]
-};
+}

@@ -1,6 +1,5 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
-const path = require('path')
+const { app, BrowserWindow } = require('electron')
 const url = require('url')
 
 // Reloads if anything changes
@@ -21,10 +20,10 @@ function createWindow () {
   })
 
   const indexPath = url.format({
-      protocol: 'http:',
-      host: 'localhost:8080',
-      pathname: 'index.html',
-      slashes: true
+    protocol: 'http:',
+    host: 'localhost:8080',
+    pathname: 'index.html',
+    slashes: true
   })
 
   // and load the index.html of the app.

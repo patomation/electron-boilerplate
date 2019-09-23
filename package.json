@@ -1,6 +1,6 @@
 {
   "name": "electron-boilerplate",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A minimal Electron application",
   "main": "./prod.main.js",
   "scripts": {
@@ -13,7 +13,8 @@
     "package-mac": "electron-packager . electron-boilerplate-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName='Electron Boilerplate'",
     "build-win": "yarn webpack-build && yarn package-win",
     "build-linux": "yarn webpack-build && yarn package-linux",
-    "build-mac": "yarn webpack-build && yarn package-mac"
+    "build-mac": "yarn webpack-build && yarn package-mac",
+    "lint": "./node_modules/.bin/eslint"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -23,6 +24,7 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
+    "acorn": "^7.0.0",
     "babel-core": "^6.26.3",
     "babel-loader": "7",
     "concurrently": "^4.1.0",
@@ -30,6 +32,13 @@
     "electron": "^5.0.4",
     "electron-packager": "^13.1.1",
     "electron-reload": "^1.4.0",
+    "eslint": "^6.4.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-standard": "^4.0.1",
     "file-loader": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.12.0",
@@ -38,8 +47,7 @@
     "wait-on": "^3.2.0",
     "webpack": "^4.34.0",
     "webpack-cli": "^3.3.4",
-    "webpack-dev-server": "^3.7.2",
-    "acorn": "^7.0.0"
+    "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
     "remote": "^0.2.6"
