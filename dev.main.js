@@ -17,7 +17,7 @@ function createWindow () {
     webPreferences: {
       nodeIntegration: true
     },
-    backgroundColor: '#222427' //dark gray
+    backgroundColor: '#222427' // dark gray
   })
 
   const indexPath = url.format({

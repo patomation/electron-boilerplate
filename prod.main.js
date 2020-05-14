@@ -10,7 +10,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    backgroundColor: '#222427' //dark gray
+    backgroundColor: '#222427' // dark gray
   })
 
   // and load the index.html of the app.

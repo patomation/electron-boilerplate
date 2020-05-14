@@ -1,5 +1,5 @@
 'use strict'
-import './sass/main.scss'
+import './style/main.scss'
 
 const entry = () => {
 

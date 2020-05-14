@@ -2,8 +2,8 @@ const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   devServer: {
-    inline:true,
-    port: 3000,
+    inline: true,
+    port: 3000
   },
   module: {
     rules: [
