@@ -19,7 +19,7 @@
     "boilerplate",
     "webpack"
   ],
-  "author": "GitHub",
+  "author": "Patrick Kelly",
   "license": "CC0-1.0",
   "devDependencies": {
     "@babel/core": "7.10.5",
