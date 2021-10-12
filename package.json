@@ -27,7 +27,7 @@
     "babel-loader": "8.1.0",
     "concurrently": "5.2.0",
     "css-loader": "3.6.0",
-    "electron": "9.1.0",
+    "electron": "11.5.0",
     "electron-packager": "15.0.0",
     "electron-reload": "1.5.0",
     "eslint": "7.4.0",
