@@ -2,7 +2,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   devServer: {
-    inline: true,
+    // inline: true,
     port: 3000
   },
   module: {
@@ -10,9 +10,9 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        use: [
+          'babel-loader'
+        ]
       },
       {
         test: /\.scss$/,
@@ -24,7 +24,9 @@ module.exports = {
       },
       {
         test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.eot$|\.woff$|\.woff2$|\.ttf$|\.wav$|\.mp3$/,
-        loader: 'file-loader?name=[name].[ext]' // Keeps original file name
+        use: [
+          'file-loader?name=[name].[ext]' // Keeps original file name
+        ]
       }
     ]
   },

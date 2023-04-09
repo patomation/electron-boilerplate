@@ -1,4 +1,4 @@
-# Electron Boilerplate
+# Electron Boilerplate V2
 
 The Electron + Webpack template that keeps simplicity in mind. 
 
@@ -20,4 +20,16 @@ Solution:
 ```
 sudo chown root:$USER /node_modules/chrome-sandbox
 sudo chmod 4755 /onode_modules/chrome-sandbox
+```
+
+
+
+## Updating things 2023
+
+Webpack update issues
+
+
+New Error. What Does it mean?
+```
+[21698:0409/123423.834708:ERROR:CONSOLE(1)] "Uncaught (in promise) TypeError: Failed to fetch", source: devtools://devtools/bundled/panels/elements/elements.js (1)
 ```
